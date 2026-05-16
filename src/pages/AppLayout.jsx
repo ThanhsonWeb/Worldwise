@@ -3,9 +3,8 @@ import Map from "../components/Map";
 
 function AppLayout() {
 	return (
-		<div className="flex  m-6 h-[calc(100vh-2rem)] bg-white ">
+		<div className="flex  m-6 h-screen bg-white ">
 			<Sidebar />
-			
 			<Map />
 		</div>
 	);

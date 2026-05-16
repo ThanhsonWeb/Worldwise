@@ -1,10 +1,16 @@
+import { cities } from "../../data/cities.json";
+import City from "./City";
 
 function Cities() {
-   return (
-      <div>
-         <h1>all the Cities </h1>
-      </div>
-   )
+	return (
+		<div>
+			<ul>
+				{cities.map((city) => (
+					<City key={city.id} city={city} />
+				))}
+			</ul>
+		</div>
+	);
 }
 
-export default Cities
+export default Cities;

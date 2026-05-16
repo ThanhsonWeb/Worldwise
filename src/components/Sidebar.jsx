@@ -1,11 +1,14 @@
 import logo from "../assets/img/logo.png";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, Link } from "react-router-dom";
+import Footer from "./Footer";
 
 function Sidebar() {
 	return (
 		<div className="p-10 bg-gray-800 w-1/2 text-white ">
 			<div>
-				<img src={logo} alt="logo" className="h-13 mx-auto " />
+				<Link to="/">
+					<img src={logo} alt="logo" className="h-13 mx-auto " />
+				</Link>
 			</div>
 
 			<nav>
@@ -20,6 +23,8 @@ function Sidebar() {
 			</nav>
 
 			<Outlet />
+
+			<Footer />
 		</div>
 	);
 }
