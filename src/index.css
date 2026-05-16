@@ -1,6 +1,17 @@
 @import "tailwindcss";
 
-
 body {
-   background: #00000095;
+	background: #48474795;
 }
+
+.homepage {
+  height: calc(100vh - 5rem);
+  background-image: linear-gradient(
+      rgba(36, 42, 46, 0.8),
+      rgba(36, 42, 46, 0.8)
+    ),
+    url("./assets/img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
