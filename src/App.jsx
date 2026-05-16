@@ -1,14 +1,16 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import HomePage from "./pages/HomePage";
-import Price from "./pages/Price";
+import Pricing from "./pages/Pricing";
 import Product from "./pages/Product";
 import Login from "./pages/Login";
+import AppLayout from "./pages/AppLayout";
 import PageNotFound from "./pages/PageNotFound";
 
 // define routes
 const router = createBrowserRouter([
 	{ path: "/", element: <HomePage /> },
-	{ path: "/price", element: <Price /> },
+	{ path: "/app", element: <AppLayout /> },
+	{ path: "/pricing", element: <Pricing /> },
 	{ path: "/product", element: <Product /> },
 	{ path: "/login", element: <Login /> },
 	{ path: "*", element: <PageNotFound /> },
