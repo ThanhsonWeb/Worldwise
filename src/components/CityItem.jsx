@@ -1,7 +1,8 @@
 import ReactCountryFlag from "react-country-flag";
+import {Link} from "react-router-dom"
 
 function CityItem({ city }) {
-	const { emoji, date, cityName } = city;
+	const { emoji, date, cityName, id } = city;
 
 	function formatDate(isoString) {
 		const date = new Date(isoString);
@@ -20,14 +21,16 @@ function CityItem({ city }) {
 	}
 
 	return (
-		<li className="flex items-center justify-between bg-gray-600 p-3 rounded-md">
-			<div className="flex items-center gap-4">
-				<ReactCountryFlag countryCode={emojiToCountryCode(emoji)} svg />
-				<span>{cityName}</span>
-			</div>
-			<span>{formatDate(date)}</span>
-			<button>X</button>
-		</li>
+		<Link to={`${id}`}>
+			<li className="flex items-center justify-between bg-gray-600 p-3 rounded-md">
+				<div className="flex items-center gap-4">
+					<ReactCountryFlag countryCode={emojiToCountryCode(emoji)} svg />
+					<span>{cityName}</span>
+				</div>
+				<span>{formatDate(date)}</span>
+				<button>X</button>
+			</li>
+		</Link>
 	);
 }
 

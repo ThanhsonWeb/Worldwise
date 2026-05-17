@@ -8,6 +8,7 @@ import PageNotFound from "./pages/PageNotFound";
 import Cities from "./components/Cities";
 import Countries from "./components/Countries";
 import { CitiesProvider } from "./contexts/CitiesContext";
+import City from "./components/City";
 
 // define routes
 const router = createBrowserRouter([
@@ -16,7 +17,9 @@ const router = createBrowserRouter([
 		path: "/app", // relative route
 		element: <AppLayout />,
 		children: [
-			{ path: "cities", index: true, element: <Cities /> }, // absolute route
+			{ index: true, element: <Cities /> },
+			{ path: "cities/:id", element: <City /> }, // absolute route
+			{ path: "cities", element: <Cities /> }, // absolute route
 			{ path: "countries", element: <Countries /> },
 		],
 	},
