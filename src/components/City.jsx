@@ -1,7 +1,7 @@
 import ReactCountryFlag from "react-country-flag";
 
 function City({ city }) {
-	const { country, emoji, date } = city;
+	const { country, emoji, date,cityName } = city;
 
 	function formatDate(isoString) {
 		const date = new Date(isoString);
@@ -23,7 +23,7 @@ function City({ city }) {
 		<li className="flex items-center justify-between bg-gray-600 p-3 rounded-md">
 			<div className="flex items-center gap-4">
 				<ReactCountryFlag countryCode={emojiToCountryCode(emoji)} svg />
-				<span>{country}</span>
+				<span>{cityName}</span>
 			</div>
 			<span>{formatDate(date)}</span>
 			<button>X</button>
