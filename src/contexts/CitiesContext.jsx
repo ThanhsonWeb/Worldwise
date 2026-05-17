@@ -4,13 +4,14 @@ const CitiesContext = createContext();
 
 function CitiesProvider({ children }) {
 	const [cities, setCities] = useState([]);
+	const [currentCity, setCurrentCity] = useState({});
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState("");
 
 	function onDeleteCity(id) {
 		setCities((cities) => cities.filter((city) => city.id !== id));
 	}
-
+	// fetch cities
 	useEffect(() => {
 		async function fetchCities() {
 			try {
@@ -30,7 +31,14 @@ function CitiesProvider({ children }) {
 
 	return (
 		<CitiesContext.Provider
-			value={{ cities, isLoading, error, onDeleteCity  }}
+			value={{
+				cities,
+				isLoading,
+				error,
+				setCurrentCity,
+				currentCity,
+				onDeleteCity,
+			}}
 		>
 			{children}
 		</CitiesContext.Provider>

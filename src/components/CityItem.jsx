@@ -37,7 +37,7 @@ function CityItem({ city }) {
 				</div>
 				<div className="flex gap-7">
 					<span>{formatDate(date)}</span>
-					<button onClick={handleDelete}>x</button>
+					<button className="px-2 rounded-full bg-red-500" onClick={handleDelete}>x</button>
 				</div>
 			</li>
 		</Link>
