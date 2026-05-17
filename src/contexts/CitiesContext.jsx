@@ -7,6 +7,10 @@ function CitiesProvider({ children }) {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState("");
 
+	function onDeleteCity(id) {
+		setCities((cities) => cities.filter((city) => city.id !== id));
+	}
+
 	useEffect(() => {
 		async function fetchCities() {
 			try {
@@ -25,7 +29,9 @@ function CitiesProvider({ children }) {
 	}, []);
 
 	return (
-		<CitiesContext.Provider value={{ cities, isLoading, error }}>
+		<CitiesContext.Provider
+			value={{ cities, isLoading, error, onDeleteCity  }}
+		>
 			{children}
 		</CitiesContext.Provider>
 	);

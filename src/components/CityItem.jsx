@@ -1,8 +1,11 @@
 import ReactCountryFlag from "react-country-flag";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
+import { useCities } from "../contexts/CitiesContext";
 
 function CityItem({ city }) {
 	const { emoji, date, cityName, id } = city;
+
+	const { onDeleteCity } = useCities();
 
 	function formatDate(isoString) {
 		const date = new Date(isoString);
@@ -20,15 +23,22 @@ function CityItem({ city }) {
 			.join("");
 	}
 
+	function handleDelete(e) {
+		e.preventDefault();
+		onDeleteCity(id);
+	}
+
 	return (
 		<Link to={`${id}`}>
-			<li className="flex items-center justify-between bg-gray-600 p-3 rounded-md">
+			<li className="flex items-center justify-between bg-gray-600 p-3 rounded-md mb-3">
 				<div className="flex items-center gap-4">
 					<ReactCountryFlag countryCode={emojiToCountryCode(emoji)} svg />
 					<span>{cityName}</span>
 				</div>
-				<span>{formatDate(date)}</span>
-				<button>X</button>
+				<div className="flex gap-7">
+					<span>{formatDate(date)}</span>
+					<button onClick={handleDelete}>x</button>
+				</div>
 			</li>
 		</Link>
 	);

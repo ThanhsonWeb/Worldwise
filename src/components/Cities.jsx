@@ -13,7 +13,7 @@ function Cities() {
 	if (isLoading) return <Loading />;
 
 	return (
-		<ul className="space-y-3">
+		<ul >
 			{cities.map((city) => (
 				<CityItem key={city.id} city={city} />
 			))}
