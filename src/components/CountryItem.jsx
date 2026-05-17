@@ -1,6 +1,6 @@
 import ReactCountryFlag from "react-country-flag";
 
-function Country({ city }) {
+function CountryItem({ city }) {
 	const { country, emoji } = city;
 	function emojiToCountryCode(emoji) {
 		if (!emoji) return "";
@@ -25,4 +25,4 @@ function Country({ city }) {
 	);
 }
 
-export default Country;
+export default CountryItem;

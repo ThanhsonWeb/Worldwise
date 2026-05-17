@@ -1,6 +1,6 @@
 import ReactCountryFlag from "react-country-flag";
 
-function City({ city }) {
+function CityItem({ city }) {
 	const { emoji, date, cityName } = city;
 
 	function formatDate(isoString) {
@@ -31,4 +31,4 @@ function City({ city }) {
 	);
 }
 
-export default City;
+export default CityItem;

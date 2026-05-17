@@ -7,6 +7,7 @@ import AppLayout from "./pages/AppLayout";
 import PageNotFound from "./pages/PageNotFound";
 import Cities from "./components/Cities";
 import Countries from "./components/Countries";
+import { CitiesProvider } from "./contexts/CitiesContext";
 
 // define routes
 const router = createBrowserRouter([
@@ -26,7 +27,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-	return <RouterProvider router={router} />;
+	return (
+		<CitiesProvider>
+			<RouterProvider router={router} />;
+		</CitiesProvider>
+	);
 }
 
 export default App;
