@@ -11,7 +11,7 @@ function Country({ city }) {
 	}
 	return (
 		<div>
-			<li className="bg-gray-500 p-3 text-xl flex items-center gap-5 rounded-2xl">
+			<li className="bg-gray-600 p-3 text-xl flex items-center gap-5 rounded-2xl">
 				<span>
 					<ReactCountryFlag
 						countryCode={emojiToCountryCode(emoji)}

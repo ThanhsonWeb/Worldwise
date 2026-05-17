@@ -12,10 +12,10 @@ import Countries from "./components/Countries";
 const router = createBrowserRouter([
 	{ path: "/", element: <HomePage /> },
 	{
-		path: "/app",
+		path: "/app", // relative route
 		element: <AppLayout />,
 		children: [
-			{ path: "cities", element: <Cities /> }, // abosulte
+			{ path: "cities", index: true, element: <Cities /> }, // absolute route
 			{ path: "countries", element: <Countries /> },
 		],
 	},

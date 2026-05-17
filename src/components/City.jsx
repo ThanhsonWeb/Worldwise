@@ -1,7 +1,7 @@
 import ReactCountryFlag from "react-country-flag";
 
 function City({ city }) {
-	const { country, emoji, date,cityName } = city;
+	const { emoji, date, cityName } = city;
 
 	function formatDate(isoString) {
 		const date = new Date(isoString);
