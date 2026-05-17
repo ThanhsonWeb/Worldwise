@@ -1,28 +1,16 @@
 {
-  "cities": [
-    {
-      "id": "f4ef",
-      "cityName": "Caumont",
-      "country": "France",
-      "emoji": "🇫🇷",
-      "date": "2026-01-19T01:52:23.090Z",
-      "notes": "",
-      "position": {
-        "lat": "43.01975900249183",
-        "lng": "1.0808150964035736"
-      }
-    },
-    {
-      "id": "cf74",
-      "cityName": "Castetbon",
-      "country": "America",
-      "emoji": "🇫🇷",
-      "date": "2026-02-10T14:24:19.199Z",
-      "notes": "",
-      "position": {
-        "lat": "46.49487781495361",
-        "lng": "-1.3412275879863291"
-      }
-    }
-  ]
+	"cities": [
+		{
+			"id": "cf74",
+			"cityName": "Castetbon",
+			"country": "America",
+			"emoji": "🇫🇷",
+			"date": "2026-02-10T14:24:19.199Z",
+			"notes": "",
+			"position": {
+				"lat": "46.49487781495361",
+				"lng": "-1.3412275879863291"
+			}
+		}
+	]
 }
