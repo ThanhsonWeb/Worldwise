@@ -3,13 +3,11 @@ import City from "./City";
 
 function Cities() {
 	return (
-		<div>
-			<ul>
-				{cities.map((city) => (
-					<City key={city.id} city={city} />
-				))}
-			</ul>
-		</div>
+		<ul className="space-y-3">
+			{cities.map((city) => (
+				<City key={city.id} city={city} />
+			))}
+		</ul>
 	);
 }
 
