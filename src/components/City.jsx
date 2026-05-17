@@ -1,8 +1,13 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useCities } from "../contexts/CitiesContext";
+import { emojiToCountryCode, formatDate } from "../utility/helper";
+import ReactCountryFlag from "react-country-flag";
+import { useNavigate } from "react-router-dom";
+import BackButton from "../ui/BackButton";
 function City() {
 	const { id } = useParams();
+	const navigate = useNavigate();
 
 	const { setCurrentCity, currentCity } = useCities();
 
@@ -25,8 +30,11 @@ function City() {
 			{/* 1 */}
 			<div>
 				<h6 className="text-xs uppercase text-gray-400">City name</h6>
-				<h3 className="text-xl font-semibold">
-					<span>{emoji}</span> {cityName}
+				<h3 className="text-xl font-semibold flex gap-4">
+					<span>
+						<ReactCountryFlag countryCode={emojiToCountryCode(emoji)} svg />
+					</span>
+					<span>{cityName}</span>
 				</h3>
 			</div>
 
@@ -35,7 +43,7 @@ function City() {
 				<h6 className="text-xs uppercase text-gray-400">
 					You went to {cityName} on
 				</h6>
-				<span className="text-sm">{date}</span>
+				<span className="text-sm">{formatDate(date)}</span>
 			</div>
 
 			{/* 3 */}
@@ -50,6 +58,8 @@ function City() {
 					Check out {cityName} on Wikipedia →
 				</a>
 			</div>
+
+			<BackButton />
 		</div>
 	);
 }

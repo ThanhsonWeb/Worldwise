@@ -1,14 +1,9 @@
 import ReactCountryFlag from "react-country-flag";
+import { emojiToCountryCode } from "../utility/helper";
 
 function CountryItem({ city }) {
 	const { country, emoji } = city;
-	function emojiToCountryCode(emoji) {
-		if (!emoji) return "";
-		const codePoints = [...emoji].map((char) => char.codePointAt(0));
-		return codePoints
-			.map((cp) => String.fromCharCode(cp - 127397)) // regional indicator offset
-			.join("");
-	}
+
 	return (
 		<div>
 			<li className="bg-gray-600 p-3 text-xl flex items-center gap-5 rounded-2xl">
