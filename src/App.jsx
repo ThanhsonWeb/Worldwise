@@ -9,6 +9,7 @@ import Cities from "./components/Cities";
 import Countries from "./components/Countries";
 import { CitiesProvider } from "./contexts/CitiesContext";
 import City from "./components/City";
+import Form from "./components/Form";
 
 // define routes
 const router = createBrowserRouter([
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
 			{ path: "cities/:id", element: <City /> }, // absolute route
 			{ path: "cities", element: <Cities /> }, // absolute route
 			{ path: "countries", element: <Countries /> },
+			{ path: "form", element: <Form /> },
 		],
 	},
 	{ path: "/pricing", element: <Pricing /> },

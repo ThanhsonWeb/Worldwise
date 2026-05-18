@@ -1,11 +1,14 @@
-function Button({ children }) {
-  return (
-    <button
-      className="bg-emerald-400 hover:bg-emerald-500 text-black font-semibold uppercase px-8 py-3 rounded-md transition-colors duration-200"
-    >
-      {children}
-    </button>
-  );
+function Button({ children, variant = "primary" }) {
+	const base =
+		"font-semibold uppercase rounded-md transition-colors duration-200 cursor-pointer";
+
+	const style = {
+		primary: "bg-emerald-400 hover:bg-emerald-500 text-black px-3 py-2 ",
+	};
+
+	const className = `${base} ${style[variant]}`;
+
+	return <button className={className}>{children}</button>;
 }
 
 export default Button;

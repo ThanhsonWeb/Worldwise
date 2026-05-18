@@ -4,19 +4,19 @@ import Footer from "./Footer";
 
 function Sidebar() {
 	return (
-		<div className="p-10 bg-gray-800 w-1/2 text-white ">
+		<div className="p-10 bg-gray-800  text-white ">
 			<div>
 				<Link to="/">
 					<img src={logo} alt="logo" className="h-13 mx-auto " />
 				</Link>
 			</div>
-
+			
 			<nav>
-				<ul className="flex gap-2 justify-center  my-6 ">
-					<li className="bg-gray-600 p-3 cursor-pointer">
+				<ul className="flex gap-1 justify-center  my-6 ">
+					<li className="bg-gray-600 p-3 cursor-pointer rounded ">
 						<NavLink to="cities">Cities</NavLink>
 					</li>
-					<li className="bg-gray-600 p-3 cursor-pointer">
+					<li className="bg-gray-600 p-3 cursor-pointer rounded ">
 						<NavLink to="countries">Countries</NavLink>
 					</li>
 				</ul>

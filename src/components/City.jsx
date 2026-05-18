@@ -3,11 +3,10 @@ import { useEffect } from "react";
 import { useCities } from "../contexts/CitiesContext";
 import { emojiToCountryCode, formatDate } from "../utility/helper";
 import ReactCountryFlag from "react-country-flag";
-import { useNavigate } from "react-router-dom";
 import BackButton from "../ui/BackButton";
+import Loading from "../ui/Loading";
 function City() {
 	const { id } = useParams();
-	const navigate = useNavigate();
 
 	const { setCurrentCity, currentCity } = useCities();
 
@@ -23,7 +22,7 @@ function City() {
 		getCity();
 	}, [id, setCurrentCity]);
 
-	if (!currentCity) return <p>Loading city...</p>;
+	if (!currentCity) return <Loading />;
 	const { cityName, emoji, date } = currentCity;
 	return (
 		<div className="p-5 bg-gray-700 text-gray-100 rounded-lg space-y-4">

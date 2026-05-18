@@ -4,7 +4,7 @@ import { useCities } from "../contexts/CitiesContext";
 import { formatDate, emojiToCountryCode } from "../utility/helper";
 
 function CityItem({ city }) {
-	const { emoji, date, cityName, id } = city;
+	const { emoji, date, cityName, id, position } = city;
 
 	const { onDeleteCity } = useCities();
 
@@ -14,7 +14,7 @@ function CityItem({ city }) {
 	}
 
 	return (
-		<Link to={`${id}`}>
+		<Link to={`${id}?lat=${position.lat}&lng=${position.lng}`}>
 			<li className="flex items-center justify-between bg-gray-600 p-3 rounded-md mb-3">
 				<div className="flex items-center gap-4">
 					<ReactCountryFlag countryCode={emojiToCountryCode(emoji)} svg />
