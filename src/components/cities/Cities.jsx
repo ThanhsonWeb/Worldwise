@@ -1,6 +1,6 @@
-import { useCities } from "../contexts/CitiesContext";
-import Loading from "../ui/Loading";
-import Error from "../ui/Error";
+import { useCities } from "../../contexts/CitiesContext";
+import Loading from "../../ui/Loading";
+import Error from "../../ui/Error";
 import CityItem from "./CityItem";
 
 function Cities() {
@@ -13,7 +13,7 @@ function Cities() {
 	if (isLoading) return <Loading />;
 
 	return (
-		<ul >
+		<ul className="text-white">
 			{cities.map((city) => (
 				<CityItem key={city.id} city={city} />
 			))}

@@ -1,5 +1,5 @@
 import ReactCountryFlag from "react-country-flag";
-import { emojiToCountryCode } from "../utility/helper";
+import { emojiToCountryCode } from "../../utility/helper";
 
 function CountryItem({ city }) {
 	const { country, emoji } = city;

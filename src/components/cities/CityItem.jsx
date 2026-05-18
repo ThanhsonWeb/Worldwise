@@ -1,7 +1,7 @@
 import ReactCountryFlag from "react-country-flag";
 import { Link } from "react-router-dom";
-import { useCities } from "../contexts/CitiesContext";
-import { formatDate, emojiToCountryCode } from "../utility/helper";
+import { useCities } from "../../contexts/CitiesContext";
+import { formatDate, emojiToCountryCode } from "../../utility/helper";
 
 function CityItem({ city }) {
 	const { emoji, date, cityName, id, position } = city;

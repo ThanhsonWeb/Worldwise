@@ -3,7 +3,7 @@ import Map from "../components/Map";
 
 function AppLayout() {
 	return (
-		<div className="flex  m-6 h-[100vh]  ">
+		<div className="flex items-center  h-screen  overflow-hidden relative">
 			<Sidebar />
 			<Map />
 		</div>

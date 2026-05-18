@@ -1,10 +1,10 @@
+import ReactCountryFlag from "react-country-flag";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { useCities } from "../contexts/CitiesContext";
-import { emojiToCountryCode, formatDate } from "../utility/helper";
-import ReactCountryFlag from "react-country-flag";
-import BackButton from "../ui/BackButton";
-import Loading from "../ui/Loading";
+import { useCities } from "../../contexts/CitiesContext";
+import { emojiToCountryCode, formatDate } from "../../utility/helper";
+import BackButton from "../../ui/BackButton";
+import Loading from "../../ui/Loading";
 function City() {
 	const { id } = useParams();
 

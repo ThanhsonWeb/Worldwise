@@ -1,26 +1,17 @@
 import logo from "../assets/img/logo.png";
-import { NavLink, Outlet, Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import Footer from "./Footer";
+import AppNav from "./AppNav";
 
 function Sidebar() {
 	return (
-		<div className="p-10 bg-gray-800  text-white ">
+		<div className="p-10  bg-gray-800  flex flex-col  h-[calc(100vh-4.8rem)]">
 			<div>
 				<Link to="/">
 					<img src={logo} alt="logo" className="h-13 mx-auto " />
 				</Link>
 			</div>
-			
-			<nav>
-				<ul className="flex gap-1 justify-center  my-6 ">
-					<li className="bg-gray-600 p-3 cursor-pointer rounded ">
-						<NavLink to="cities">Cities</NavLink>
-					</li>
-					<li className="bg-gray-600 p-3 cursor-pointer rounded ">
-						<NavLink to="countries">Countries</NavLink>
-					</li>
-				</ul>
-			</nav>
+			<AppNav />
 
 			<Outlet />
 

@@ -3,12 +3,12 @@ import HomePage from "./pages/HomePage";
 import Pricing from "./pages/Pricing";
 import Product from "./pages/Product";
 import Login from "./pages/Login";
-import AppLayout from "./pages/AppLayout";
+import AppLayout from "./layouts/AppLayout";
 import PageNotFound from "./pages/PageNotFound";
-import Cities from "./components/Cities";
-import Countries from "./components/Countries";
+import Cities from "./components/cities/Cities";
+import Countries from "./components/countries/Countries";
 import { CitiesProvider } from "./contexts/CitiesContext";
-import City from "./components/City";
+import City from "./components/cities/City";
 import Form from "./components/Form";
 
 // define routes
