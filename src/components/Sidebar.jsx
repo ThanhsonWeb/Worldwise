@@ -5,7 +5,7 @@ import AppNav from "./AppNav";
 
 function Sidebar() {
 	return (
-		<div className="p-10  bg-gray-800  flex flex-col  h-[calc(100vh-4.8rem)]">
+		<div className="p-10  bg-gray-800 w-110  flex flex-col h-screen">
 			<div>
 				<Link to="/">
 					<img src={logo} alt="logo" className="h-13 mx-auto " />
