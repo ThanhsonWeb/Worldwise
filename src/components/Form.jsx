@@ -1,8 +1,28 @@
 import BackButton from "../ui/BackButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "../ui/Button";
+import { UseUrlPosition } from "../hooks/useUrlPostion";
 function Form() {
 	const [cityName, setCityName] = useState("");
+
+	const { lat, lng } = UseUrlPosition();
+
+	// fetch exact city by lat and lng
+	const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
+
+	useEffect(() => {
+		async function fetchCity() {
+			try {
+				const res = await fetch(`${BASE_URL}?latitude=${lat}&longitude=${lng}`);
+				const data = await res.json();
+				console.log(data);
+				setCityName(data.city);
+			} catch (err) {
+				console.error(err.message);
+			}
+		}
+		fetchCity();
+	}, [lat, lng]);
 
 	return (
 		<form className="bg-gray-700 text-gray-100 p-6 rounded-lg space-y-3 w-[22rem] ">
@@ -16,6 +36,7 @@ function Form() {
 						onChange={(e) => setCityName(e.target.value)}
 						className="flex-1 px-3 py-1 rounded-md bg-gray-100 text-gray-800 "
 					/>
+					<span></span>
 				</div>
 			</div>
 
@@ -41,8 +62,8 @@ function Form() {
 				></textarea>
 			</div>
 
-			<div className="flex justify-between " >
-				<Button >Add</Button>
+			<div className="flex justify-between ">
+				<Button>Add</Button>
 				<BackButton />
 			</div>
 		</form>

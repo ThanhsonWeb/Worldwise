@@ -1,4 +1,4 @@
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import {
 	MapContainer,
@@ -19,7 +19,7 @@ function Map() {
 
 	const { cities } = useCities();
 	// use custom hook
-	const [lat, lng] = UseUrlPosition();
+	const {lat, lng} = UseUrlPosition();
 	console.log(lat, lng);
 
 	useEffect(() => {
