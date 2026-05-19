@@ -2,8 +2,14 @@ import BackButton from "../ui/BackButton";
 import { useState, useEffect } from "react";
 import Button from "../ui/Button";
 import { UseUrlPosition } from "../hooks/useUrlPostion";
+import ReactCountryFlag from "react-country-flag";
+import { formatDate } from "../utility/helper";
+
 function Form() {
 	const [cityName, setCityName] = useState("");
+	const [emoji, setEmoji] = useState("");
+	const [date, setDate] = useState(new Date());
+	const [notes, setNotes] = useState("");
 
 	const { lat, lng } = UseUrlPosition();
 
@@ -17,6 +23,7 @@ function Form() {
 				const data = await res.json();
 				console.log(data);
 				setCityName(data.city);
+				setEmoji(data.countryCode);
 			} catch (err) {
 				console.error(err.message);
 			}
@@ -29,14 +36,21 @@ function Form() {
 			{/* City name */}
 			<div>
 				<label className="block text-sm text-gray-300 mb-1">City name</label>
-				<div className="flex items-center gap-2">
+				<div className="flex items-center gap-2 relative">
 					<input
 						type="text"
 						value={cityName}
 						onChange={(e) => setCityName(e.target.value)}
 						className="flex-1 px-3 py-1 rounded-md bg-gray-100 text-gray-800 "
 					/>
-					<span></span>
+
+					<span className="absolute right-2">
+						<ReactCountryFlag
+							countryCode={emoji}
+							svg
+							style={{ fontSize: "1.7rem" }}
+						/>
+					</span>
 				</div>
 			</div>
 
@@ -46,7 +60,8 @@ function Form() {
 					When did you go to ....?
 				</label>
 				<input
-					type="text"
+					type="date"
+					value={formatDate(date)}
 					className="w-full px-3 py-1 rounded-md bg-gray-100 text-gray-800 "
 				/>
 			</div>
@@ -58,6 +73,8 @@ function Form() {
 				</label>
 				<textarea
 					rows="2"
+					value={notes}
+					onChange={(e) => setNotes(e.target.value)}
 					className="w-full p-2 rounded-md bg-gray-100 text-gray-800 focus:outline-none"
 				></textarea>
 			</div>
