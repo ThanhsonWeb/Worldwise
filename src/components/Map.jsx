@@ -66,6 +66,7 @@ function DetectClick() {
 	useMapEvent({
 		click: (e) => navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
 	});
+	return null;
 }
 
 function ChangeCenter({ mapPosition }) {
@@ -73,6 +74,7 @@ function ChangeCenter({ mapPosition }) {
 	useEffect(() => {
 		map.setView(mapPosition);
 	}, [map, mapPosition]);
+	return null;
 }
 
 export default Map;

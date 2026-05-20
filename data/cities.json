@@ -13,48 +13,26 @@
       }
     },
     {
+      "emoji": "🇪🇸",
+      "cityName": "Calmarza",
+      "date": "2026-05-20T09:13:23.038Z",
+      "notes": "",
+      "position": {
+        "lat": "41.188069473412845",
+        "lng": "-1.956983303130764"
+      },
+      "id": "XasTpfMv7Bo"
+    },
+    {
       "emoji": "🇩🇿",
-      "cityName": "El Bnoud",
-      "date": "2026-05-20T07:21:31.754Z",
+      "cityName": "Tin Zaouatine",
+      "date": "2026-05-20T09:15:10.724Z",
       "notes": "",
       "position": {
-        "lat": "31.807926840901025",
-        "lng": "0.21379571400512282"
+        "lat": "20.40955872465166",
+        "lng": "2.9438193945680524"
       },
-      "id": "ZjHcaSRfCqo"
-    },
-    {
-      "emoji": "🇹🇩",
-      "cityName": "Mangalme",
-      "date": "2026-05-20T07:21:34.875Z",
-      "notes": "",
-      "position": {
-        "lat": "12.626221711107648",
-        "lng": "19.621096008132092"
-      },
-      "id": "h3fXcDgO44w"
-    },
-    {
-      "emoji": "🇪🇸",
-      "cityName": "Castello de la Plana",
-      "date": "2026-05-20T08:20:33.089Z",
-      "notes": "",
-      "position": {
-        "lat": "40.04935648053978",
-        "lng": "-0.0015748670711723811"
-      },
-      "id": "IsjSEkQ-xkw"
-    },
-    {
-      "emoji": "🇪🇸",
-      "cityName": "Puebla Tornesa",
-      "date": "2026-05-20T08:21:11.580Z",
-      "notes": "",
-      "position": {
-        "lat": "40.08337682869764",
-        "lng": "0.011802033720109685"
-      },
-      "id": "dPdD27lgPd0"
+      "id": "n-GMVXJO6z0"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
