@@ -16,6 +16,7 @@ function City() {
 	useEffect(() => {
 		async function getCity() {
 			const res = await fetch(`http://localhost:8000/cities/${id}`);
+			// if(!res.ok) throw new Error("City not found")
 			const data = await res.json();
 			setCurrentCity(data);
 		}

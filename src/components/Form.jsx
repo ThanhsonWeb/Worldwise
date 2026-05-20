@@ -3,13 +3,12 @@ import { useState, useEffect } from "react";
 import Button from "../ui/Button";
 import { UseUrlPosition } from "../hooks/useUrlPostion";
 import ReactCountryFlag from "react-country-flag";
-import { formatDate } from "../utility/helper";
 import { useCities } from "../contexts/CitiesContext";
 import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
+const BASE_URLl = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
 function emojiFromCountryCode(code) {
 	return String.fromCodePoint(
@@ -31,7 +30,7 @@ function Form() {
 	useEffect(() => {
 		async function fetchCity() {
 			try {
-				const res = await fetch(`${BASE_URL}?latitude=${lat}&longitude=${lng}`);
+				const res = await fetch(`${BASE_URLl}?latitude=${lat}&longitude=${lng}`);
 				const dataCity = await res.json();
 				console.log(dataCity);
 				setCountry(dataCity.country);
@@ -46,7 +45,10 @@ function Form() {
 
 	function handleAddCity(e) {
 		e.preventDefault();
-		const id = Date.now();
+		const id = Math.random().toString(36).substring(2, 6); // "cf74"-style
+
+		console.log(typeof id);
+		if (!cityName || !date) return;
 		const newCity = {
 			id: id,
 			emoji: emojiFromCountryCode(emoji),

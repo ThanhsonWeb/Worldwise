@@ -1,40 +1,28 @@
 {
-	"cities": [
-		{
-			"id": "cf74",
-			"cityName": "Castetbon",
-			"country": "America",
-			"emoji": "🇫🇷",
-			"date": "2026-02-10T14:24:19.199Z",
-			"notes": "",
-			"position": {
-				"lat": "46.49487781495361",
-				"lng": "-1.3412275879863291"
-			}
-		},
-		{
-			"id": "73ae",
-			"cityName": "El Burgo de Osma",
-			"country": "Spain",
-			"emoji": "🇪🇸",
-			"date": "2026-05-17T00:48:14.581Z",
-			"notes": "",
-			"position": {
-				"lat": "41.65479002401666",
-				"lng": "-3.1419241038567702"
-			}
-		},
-		{
-			"id": "73aew",
-			"cityName": "El Burgo de Osma",
-			"country": "Spain",
-			"emoji": "🇪🇸",
-			"date": "2026-05-17T00:48:14.581Z",
-			"notes": "",
-			"position": {
-				"lat": "41.65479002401666",
-				"lng": "-3.1419241038567702"
-			}
-		}
-	]
+  "cities": [
+    {
+      "id": "73aew",
+      "cityName": "El Burgo de Osma",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-05-17T00:48:14.581Z",
+      "notes": "",
+      "position": {
+        "lat": "41.65479002401666",
+        "lng": "-3.1419241038567702"
+      }
+    },
+    {
+      "id": "rq8WXQL2vN0",
+      "emoji": "🇫🇷",
+      "cityName": "Kaysersberg Vignoble",
+      "date": "2026-05-20T07:00:44.613Z",
+      "notes": "",
+      "position": {
+        "lat": "48.16608385821308",
+        "lng": "7.228834886844849"
+      }
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
