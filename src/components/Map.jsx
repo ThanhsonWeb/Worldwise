@@ -15,12 +15,9 @@ import ReactCountryFlag from "react-country-flag";
 import { UseUrlPosition } from "../hooks/useUrlPostion";
 
 function Map() {
-	const [mapPosition, setMapPosition] = useState([40, 0]);
-
 	const { cities } = useCities();
-	// use custom hook
 	const {lat, lng} = UseUrlPosition();
-	console.log(lat, lng);
+	const [mapPosition, setMapPosition] = useState([40, 0]);
 
 	useEffect(() => {
 		if (lat && lng) {

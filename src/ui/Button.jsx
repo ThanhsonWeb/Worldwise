@@ -1,4 +1,4 @@
-function Button({ children, variant = "primary" }) {
+function Button({ children, variant = "primary", onClick, type }) {
 	const base =
 		"font-semibold uppercase rounded-md transition-colors duration-200 cursor-pointer";
 
@@ -8,7 +8,11 @@ function Button({ children, variant = "primary" }) {
 
 	const className = `${base} ${style[variant]}`;
 
-	return <button className={className}>{children}</button>;
+	return (
+		<button type={type} onClick={onClick} className={className}>
+			{children}
+		</button>
+	);
 }
 
 export default Button;

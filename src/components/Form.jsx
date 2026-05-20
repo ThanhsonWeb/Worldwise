@@ -4,26 +4,39 @@ import Button from "../ui/Button";
 import { UseUrlPosition } from "../hooks/useUrlPostion";
 import ReactCountryFlag from "react-country-flag";
 import { formatDate } from "../utility/helper";
+import { useCities } from "../contexts/CitiesContext";
+import { useNavigate } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
+
+function emojiFromCountryCode(code) {
+	return String.fromCodePoint(
+		...[...code.toUpperCase()].map((c) => 127397 + c.charCodeAt()),
+	);
+}
 
 function Form() {
+	const { onAddCity } = useCities();
+	const { lat, lng } = UseUrlPosition();
 	const [cityName, setCityName] = useState("");
 	const [emoji, setEmoji] = useState("");
 	const [date, setDate] = useState(new Date());
 	const [notes, setNotes] = useState("");
+	const [country, setCountry] = useState("");
 
-	const { lat, lng } = UseUrlPosition();
-
-	// fetch exact city by lat and lng
-	const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		async function fetchCity() {
 			try {
 				const res = await fetch(`${BASE_URL}?latitude=${lat}&longitude=${lng}`);
-				const data = await res.json();
-				console.log(data);
-				setCityName(data.city);
-				setEmoji(data.countryCode);
+				const dataCity = await res.json();
+				console.log(dataCity);
+				setCountry(dataCity.country);
+				setCityName(dataCity.city);
+				setEmoji(dataCity.countryCode);
 			} catch (err) {
 				console.error(err.message);
 			}
@@ -31,8 +44,27 @@ function Form() {
 		fetchCity();
 	}, [lat, lng]);
 
+	function handleAddCity(e) {
+		e.preventDefault();
+		const id = Date.now();
+		const newCity = {
+			id: id,
+			emoji: emojiFromCountryCode(emoji),
+			cityName,
+			country,
+			date,
+			notes,
+			position: { lat, lng },
+		};
+		onAddCity(newCity);
+		navigate("/app/cities");
+	}
+
 	return (
-		<form className="bg-gray-700 text-gray-100 p-6 rounded-lg space-y-3 w-[22rem] ">
+		<form
+			onSubmit={handleAddCity}
+			className="bg-gray-700 text-gray-100 p-6 rounded-lg space-y-3 w-[22rem] "
+		>
 			{/* City name */}
 			<div>
 				<label className="block text-sm text-gray-300 mb-1">City name</label>
@@ -59,10 +91,12 @@ function Form() {
 				<label className="block text-sm text-gray-300 mb-1">
 					When did you go to ....?
 				</label>
-				<input
-					type="date"
-					value={formatDate(date)}
-					className="w-full px-3 py-1 rounded-md bg-gray-100 text-gray-800 "
+
+				<DatePicker
+					selected={date}
+					onChange={(newDate) => setDate(newDate)}
+					dateFormat="dd/MM/yyyy"
+					className=" px-3 py-1 rounded-md bg-gray-100 text-gray-800"
 				/>
 			</div>
 
@@ -80,7 +114,7 @@ function Form() {
 			</div>
 
 			<div className="flex justify-between ">
-				<Button>Add</Button>
+				<Button type="submit">Add</Button>
 				<BackButton />
 			</div>
 		</form>

@@ -11,6 +11,11 @@ function CitiesProvider({ children }) {
 	function onDeleteCity(id) {
 		setCities((cities) => cities.filter((city) => city.id !== id));
 	}
+
+	function onAddCity(newCity) {
+		setCities((cities) => [...cities, newCity]);
+	}
+
 	// fetch cities
 	useEffect(() => {
 		async function fetchCities() {
@@ -35,9 +40,10 @@ function CitiesProvider({ children }) {
 				cities,
 				isLoading,
 				error,
-				setCurrentCity,
 				currentCity,
+				setCurrentCity,
 				onDeleteCity,
+				onAddCity,
 			}}
 		>
 			{children}
