@@ -31,7 +31,7 @@ function City() {
 			}
 		}
 		getCity();
-	}, [id, setCurrentCity]);
+	}, [id, setCurrentCity, setIsLoading]);
 
 	if (!currentCity) return <Loading />;
 	const { cityName, emoji, date } = currentCity;

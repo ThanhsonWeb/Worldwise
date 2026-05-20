@@ -9,6 +9,7 @@ function CitiesProvider({ children }) {
 	const [currentCity, setCurrentCity] = useState(null);
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState("");
+	const [emptyCity, setEmptyCity] = useState(false);
 
 	// Delete city in json server
 	async function onDeleteCity(id) {
@@ -74,6 +75,8 @@ function CitiesProvider({ children }) {
 				isLoading,
 				error,
 				currentCity,
+				emptyCity,
+				setEmptyCity,
 				setIsLoading,
 				setCurrentCity,
 				onDeleteCity,

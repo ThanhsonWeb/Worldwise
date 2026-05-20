@@ -17,7 +17,7 @@ function emojiFromCountryCode(code) {
 }
 
 function Form() {
-	const { onAddCity } = useCities();
+	const { onAddCity, setEmptyCity, emptyCity } = useCities();
 	const { lat, lng } = UseUrlPosition();
 	const [cityName, setCityName] = useState("");
 	const [emoji, setEmoji] = useState("");
@@ -38,16 +38,22 @@ function Form() {
 				if (!res.ok)
 					throw new Error("Something went wrong while fetching data");
 				const dataCity = await res.json();
-				console.log(dataCity);
-				setCountry(dataCity.country);
-				setCityName(dataCity.city);
-				setEmoji(dataCity.countryCode);
+				if (!dataCity.city || !dataCity.countryName) {
+					setEmptyCity(true);
+				} else {
+					setEmptyCity(false);
+					console.log(dataCity);
+					setCountry(dataCity.country);
+					setCityName(dataCity.city);
+					setEmoji(dataCity.countryCode);
+				}
 			} catch (err) {
 				console.error(err.message);
+				setEmptyCity(true);
 			}
 		}
 		fetchCity();
-	}, [lat, lng]);
+	}, [lat, lng, setEmptyCity]);
 
 	function handleAddCity(e) {
 		e.preventDefault();
@@ -64,6 +70,13 @@ function Form() {
 		onAddCity(newCity);
 		navigate("/app/cities");
 	}
+
+	if (emptyCity)
+		return (
+			<h2 className="text-2xl text-white mt-10">
+				This is not a City bro 🤔🍃🍃
+			</h2>
+		);
 
 	return (
 		<form

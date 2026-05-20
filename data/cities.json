@@ -1,15 +1,48 @@
 {
   "cities": [
     {
-      "emoji": "🇸🇩",
-      "cityName": "Al Malha District",
-      "date": "2026-05-20T12:29:35.784Z",
+      "emoji": "🇩🇪",
+      "cityName": "Bismark (Altmark)",
+      "date": "2026-05-20T12:34:42.205Z",
       "notes": "",
       "position": {
-        "lat": "17.145340424464358",
-        "lng": "27.132909546596775"
+        "lat": "52.61510311776244",
+        "lng": "11.498232327032682"
       },
-      "id": "hmxBJiz_TgU"
+      "id": "5MxBKe6xTBA"
+    },
+    {
+      "emoji": "🇫🇷",
+      "cityName": "Chirac-Bellevue",
+      "date": "2026-05-20T12:43:39.288Z",
+      "notes": "",
+      "position": {
+        "lat": "45.43067683417397",
+        "lng": "2.288291681297916"
+      },
+      "id": "XvxgTfJnric"
+    },
+    {
+      "emoji": "🇨🇩",
+      "cityName": "Bolomba",
+      "date": "2026-05-20T13:15:01.054Z",
+      "notes": "",
+      "position": {
+        "lat": "0.5782126463899606",
+        "lng": "18.562014517349347"
+      },
+      "id": "8Bb2gQVjWjA"
+    },
+    {
+      "emoji": "🇦🇴",
+      "cityName": "Luena",
+      "date": "2026-05-20T13:16:42.188Z",
+      "notes": "",
+      "position": {
+        "lat": "-12.589728173808165",
+        "lng": "18.666996592866138"
+      },
+      "id": "ayO4XRlKg0E"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
