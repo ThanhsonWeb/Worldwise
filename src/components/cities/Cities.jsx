@@ -2,6 +2,7 @@ import { useCities } from "../../contexts/CitiesContext";
 import Loading from "../../ui/Loading";
 import Error from "../../ui/Error";
 import CityItem from "./CityItem";
+import EmptyCity from "./EmptyCity";
 
 function Cities() {
 	// const { cities } = useContext(CitiesContext);
@@ -11,6 +12,8 @@ function Cities() {
 	if (error) return <Error message={error} />;
 
 	if (isLoading) return <Loading />;
+
+	if (cities.length === 0) return <EmptyCity />;
 
 	return (
 		<ul className="text-white">

@@ -1,38 +1,15 @@
 {
   "cities": [
     {
-      "id": "73aew",
-      "cityName": "El Burgo de Osma",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2026-05-17T00:48:14.581Z",
+      "emoji": "🇸🇩",
+      "cityName": "Al Malha District",
+      "date": "2026-05-20T12:29:35.784Z",
       "notes": "",
       "position": {
-        "lat": "41.65479002401666",
-        "lng": "-3.1419241038567702"
-      }
-    },
-    {
-      "emoji": "🇪🇸",
-      "cityName": "Calmarza",
-      "date": "2026-05-20T09:13:23.038Z",
-      "notes": "",
-      "position": {
-        "lat": "41.188069473412845",
-        "lng": "-1.956983303130764"
+        "lat": "17.145340424464358",
+        "lng": "27.132909546596775"
       },
-      "id": "XasTpfMv7Bo"
-    },
-    {
-      "emoji": "🇩🇿",
-      "cityName": "Tin Zaouatine",
-      "date": "2026-05-20T09:15:10.724Z",
-      "notes": "",
-      "position": {
-        "lat": "20.40955872465166",
-        "lng": "2.9438193945680524"
-      },
-      "id": "n-GMVXJO6z0"
+      "id": "hmxBJiz_TgU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
