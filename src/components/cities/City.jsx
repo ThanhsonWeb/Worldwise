@@ -5,20 +5,30 @@ import { useCities } from "../../contexts/CitiesContext";
 import { emojiToCountryCode, formatDate } from "../../utility/helper";
 import BackButton from "../../ui/BackButton";
 import Loading from "../../ui/Loading";
+
+const BASE_URL = "http://localhost:8000";
+
 function City() {
 	const { id } = useParams();
 
-	const { setCurrentCity, currentCity } = useCities();
+	const { setCurrentCity, currentCity, setIsLoading } = useCities();
 
 	console.log(currentCity);
 
 	// fetch exact city by id
 	useEffect(() => {
 		async function getCity() {
-			const res = await fetch(`http://localhost:8000/cities/${id}`);
-			// if(!res.ok) throw new Error("City not found")
-			const data = await res.json();
-			setCurrentCity(data);
+			try {
+				setIsLoading(true);
+				const res = await fetch(`${BASE_URL}/cities/${id}`);
+				if (!res.ok) throw new Error("City not found");
+				const data = await res.json();
+				setCurrentCity(data);
+			} catch (err) {
+				console.error(err.message);
+			} finally {
+				setIsLoading(false);
+			}
 		}
 		getCity();
 	}, [id, setCurrentCity]);

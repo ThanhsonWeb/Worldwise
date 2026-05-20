@@ -28,9 +28,15 @@ function Form() {
 	const navigate = useNavigate();
 
 	useEffect(() => {
+		if (!lat || !lng) return;
+
 		async function fetchCity() {
 			try {
-				const res = await fetch(`${BASE_URLl}?latitude=${lat}&longitude=${lng}`);
+				const res = await fetch(
+					`${BASE_URLl}?latitude=${lat}&longitude=${lng}`,
+				);
+				if (!res.ok)
+					throw new Error("Something went wrong while fetching data");
 				const dataCity = await res.json();
 				console.log(dataCity);
 				setCountry(dataCity.country);
@@ -45,12 +51,9 @@ function Form() {
 
 	function handleAddCity(e) {
 		e.preventDefault();
-		const id = Math.random().toString(36).substring(2, 6); // "cf74"-style
-
-		console.log(typeof id);
 		if (!cityName || !date) return;
 		const newCity = {
-			id: id,
+			// json-server will create the 'id' automatically
 			emoji: emojiFromCountryCode(emoji),
 			cityName,
 			country,

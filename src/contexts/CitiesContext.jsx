@@ -74,6 +74,7 @@ function CitiesProvider({ children }) {
 				isLoading,
 				error,
 				currentCity,
+				setIsLoading,
 				setCurrentCity,
 				onDeleteCity,
 				onAddCity,

@@ -16,7 +16,7 @@ import { UseUrlPosition } from "../hooks/useUrlPostion";
 
 function Map() {
 	const { cities } = useCities();
-	const {lat, lng} = UseUrlPosition();
+	const { lat, lng } = UseUrlPosition();
 	const [mapPosition, setMapPosition] = useState([40, 0]);
 
 	useEffect(() => {
@@ -29,7 +29,7 @@ function Map() {
 		<div className="flex-1  overflow-hidden h-screen">
 			<MapContainer
 				center={mapPosition}
-				zoom={13}
+				zoom={7}
 				scrollWheelZoom={true}
 				className="h-full w-full rounded-lg"
 			>
@@ -70,7 +70,9 @@ function DetectClick() {
 
 function ChangeCenter({ mapPosition }) {
 	const map = useMap();
-	map.setView(mapPosition);
+	useEffect(() => {
+		map.setView(mapPosition);
+	}, [map, mapPosition]);
 }
 
 export default Map;

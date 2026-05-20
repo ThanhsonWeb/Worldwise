@@ -13,15 +13,48 @@
       }
     },
     {
-      "id": "rq8WXQL2vN0",
-      "emoji": "🇫🇷",
-      "cityName": "Kaysersberg Vignoble",
-      "date": "2026-05-20T07:00:44.613Z",
+      "emoji": "🇩🇿",
+      "cityName": "El Bnoud",
+      "date": "2026-05-20T07:21:31.754Z",
       "notes": "",
       "position": {
-        "lat": "48.16608385821308",
-        "lng": "7.228834886844849"
-      }
+        "lat": "31.807926840901025",
+        "lng": "0.21379571400512282"
+      },
+      "id": "ZjHcaSRfCqo"
+    },
+    {
+      "emoji": "🇹🇩",
+      "cityName": "Mangalme",
+      "date": "2026-05-20T07:21:34.875Z",
+      "notes": "",
+      "position": {
+        "lat": "12.626221711107648",
+        "lng": "19.621096008132092"
+      },
+      "id": "h3fXcDgO44w"
+    },
+    {
+      "emoji": "🇪🇸",
+      "cityName": "Castello de la Plana",
+      "date": "2026-05-20T08:20:33.089Z",
+      "notes": "",
+      "position": {
+        "lat": "40.04935648053978",
+        "lng": "-0.0015748670711723811"
+      },
+      "id": "IsjSEkQ-xkw"
+    },
+    {
+      "emoji": "🇪🇸",
+      "cityName": "Puebla Tornesa",
+      "date": "2026-05-20T08:21:11.580Z",
+      "notes": "",
+      "position": {
+        "lat": "40.08337682869764",
+        "lng": "0.011802033720109685"
+      },
+      "id": "dPdD27lgPd0"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
