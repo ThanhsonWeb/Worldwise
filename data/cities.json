@@ -23,26 +23,26 @@
       "id": "XvxgTfJnric"
     },
     {
-      "emoji": "🇨🇩",
-      "cityName": "Bolomba",
-      "date": "2026-05-20T13:15:01.054Z",
+      "emoji": "🇿🇦",
+      "cityName": "Ngwathe",
+      "date": "2026-05-20T13:22:29.484Z",
       "notes": "",
       "position": {
-        "lat": "0.5782126463899606",
-        "lng": "18.562014517349347"
+        "lat": "-27.474675616679217",
+        "lng": "27.71928703408648"
       },
-      "id": "8Bb2gQVjWjA"
+      "id": "YgPba9nGYtU"
     },
     {
-      "emoji": "🇦🇴",
-      "cityName": "Luena",
-      "date": "2026-05-20T13:16:42.188Z",
+      "emoji": "🇪🇸",
+      "cityName": "Alcolea del Pinar",
+      "date": "2026-05-20T22:46:44.314Z",
       "notes": "",
       "position": {
-        "lat": "-12.589728173808165",
-        "lng": "18.666996592866138"
+        "lat": "40.95737455795203",
+        "lng": "-2.4944638233943444"
       },
-      "id": "ayO4XRlKg0E"
+      "id": "qeVTo9mHRqY"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

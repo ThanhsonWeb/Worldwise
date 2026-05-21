@@ -10,6 +10,7 @@ import Countries from "./components/countries/Countries";
 import { CitiesProvider } from "./contexts/CitiesContext";
 import City from "./components/cities/City";
 import Form from "./components/Form";
+import { AuthProvider } from "./contexts/AuthContext";
 
 // define routes
 const router = createBrowserRouter([
@@ -33,9 +34,11 @@ const router = createBrowserRouter([
 
 function App() {
 	return (
-		<CitiesProvider>
-			<RouterProvider router={router} />;
-		</CitiesProvider>
+		<AuthProvider>
+			<CitiesProvider>
+				<RouterProvider router={router} />;
+			</CitiesProvider>
+		</AuthProvider>
 	);
 }
 

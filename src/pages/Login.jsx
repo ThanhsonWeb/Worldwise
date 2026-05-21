@@ -1,12 +1,20 @@
 import PageNav from "../components/PageNav";
 import Button from "../ui/Button";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useAuth } from "../contexts/AuthContext";
+
 function Login() {
+	const { login, isAuthenticated } = useAuth();
+	const [email, setEmail] = useState("AnhSondz@gmail.com");
+	const [password, setPassword] = useState("123456");
+
 	const navigate = useNavigate();
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		navigate("/app/cities");
+		if (email && password) login(email, password);
+		if (isAuthenticated) navigate("/app/cities");
 	}
 
 	return (
@@ -20,12 +28,16 @@ function Login() {
 					<label className="block mb-2 ">Email address</label>
 					<input
 						type="email"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
 						className="w-full p-2 mb-4 rounded bg-gray-200 text-gray-900 "
 					/>
 
 					<label className="block mb-2 ">Password</label>
 					<input
 						type="password"
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
 						className="w-full p-2 mb-4 rounded bg-gray-200 text-gray-900 "
 					/>
 					<Button type="submit">Login</Button>
