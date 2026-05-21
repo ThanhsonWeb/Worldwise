@@ -18,7 +18,7 @@ function Login() {
 	}
 
 	return (
-		<div className="h-[calc(100vh-5rem)] m-6 px-[5rem] py-[2.5rem] bg-gray-800 text-white">
+		<div className="h-[calc(100vh-5rem)] m-6 md:px-[5rem] py-[2.5rem] bg-gray-800 text-white">
 			<PageNav />
 			<div
 				onSubmit={handleSubmit}

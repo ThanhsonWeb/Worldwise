@@ -5,11 +5,11 @@ function PageNav() {
 	return (
 		<div className="flex items-center justify-between ">
 			<Link to="/">
-				<img src={logo} alt="logo" className="h-16" />
+				<img src={logo} alt="logo" className="md:h-16 h-12" />
 			</Link>
 
-			<button>
-				<img src={barIcon} alt="barIcon" className="h-17" />
+			<button className="md:hidden">
+				<img src={barIcon} alt="barIcon" className="h-13" />
 			</button>
 
 			<nav className="md:block hidden">

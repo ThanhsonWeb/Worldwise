@@ -4,7 +4,7 @@ import User from "../components/User";
 
 function AppLayout() {
 	return (
-		<div className="flex p-10  h-screen relative ">
+		<div className="md:flex md:p-10  h-screen relative ">
 			<Sidebar />
 			<Map />
 			<User />
