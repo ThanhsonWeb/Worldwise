@@ -13,14 +13,14 @@
     },
     {
       "emoji": "🇪🇸",
-      "cityName": "Caspe",
-      "date": "2026-05-21T02:41:19.363Z",
+      "cityName": "Tauste",
+      "date": "2026-05-21T04:22:07.448Z",
       "notes": "",
       "position": {
-        "lat": "41.23981042751247",
-        "lng": "-0.09125457188856602"
+        "lat": "41.90301431878618",
+        "lng": "-1.2078343549637127"
       },
-      "id": "kFf3cPOlwD0"
+      "id": "5bTMC91__bw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -1,4 +1,10 @@
-import { createContext, useEffect, useState, useContext } from "react";
+import {
+	createContext,
+	useEffect,
+	useState,
+	useContext,
+	useCallback,
+} from "react";
 
 const CitiesContext = createContext();
 
@@ -12,23 +18,21 @@ function CitiesProvider({ children }) {
 	const [emptyCity, setEmptyCity] = useState(false);
 
 	// Delete city in json server
-	async function onDeleteCity(id) {
-		try {
-			setIsLoading(true);
-			await fetch(`${BASE_URL}/cities/${id}`, {
-				method: "DELETE",
-			});
-
-			setCities((cities) => cities.filter((city) => city.id !== id));
-
-			// Clear currentCity if it's the one being deleted
-			if (currentCity?.id === id) setCurrentCity(null);
-		} catch (err) {
-			console.error(err.message);
-		} finally {
-			setIsLoading(false);
-		}
-	}
+	const onDeleteCity = useCallback(
+		async (id) => {
+			try {
+				setIsLoading(true);
+				await fetch(`${BASE_URL}/cities/${id}`, { method: "DELETE" });
+				setCities((cities) => cities.filter((city) => city.id !== id));
+				if (currentCity?.id === id) setCurrentCity(null);
+			} catch (err) {
+				console.error(err.message);
+			} finally {
+				setIsLoading(false);
+			}
+		},
+		[currentCity],
+	);
 
 	// createCity in json server
 	//onAddCity is an event handler — it should only run when the user submits the form or clicks a button.
