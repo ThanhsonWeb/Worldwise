@@ -12,37 +12,15 @@
       "id": "5MxBKe6xTBA"
     },
     {
-      "emoji": "🇫🇷",
-      "cityName": "Chirac-Bellevue",
-      "date": "2026-05-20T12:43:39.288Z",
-      "notes": "",
-      "position": {
-        "lat": "45.43067683417397",
-        "lng": "2.288291681297916"
-      },
-      "id": "XvxgTfJnric"
-    },
-    {
-      "emoji": "🇿🇦",
-      "cityName": "Ngwathe",
-      "date": "2026-05-20T13:22:29.484Z",
-      "notes": "",
-      "position": {
-        "lat": "-27.474675616679217",
-        "lng": "27.71928703408648"
-      },
-      "id": "YgPba9nGYtU"
-    },
-    {
       "emoji": "🇪🇸",
-      "cityName": "Alcolea del Pinar",
-      "date": "2026-05-20T22:46:44.314Z",
+      "cityName": "Caspe",
+      "date": "2026-05-21T02:41:19.363Z",
       "notes": "",
       "position": {
-        "lat": "40.95737455795203",
-        "lng": "-2.4944638233943444"
+        "lat": "41.23981042751247",
+        "lng": "-0.09125457188856602"
       },
-      "id": "qeVTo9mHRqY"
+      "id": "kFf3cPOlwD0"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

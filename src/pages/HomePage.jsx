@@ -16,7 +16,7 @@ function HomePage() {
 				have wandered the world.
 			</h2>
 
-			<LinkButton to="/app">Start Tracking Now</LinkButton>
+			<LinkButton to="/login">Start Tracking Now</LinkButton>
 		</div>
 	);
 }

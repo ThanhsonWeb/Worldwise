@@ -13,11 +13,11 @@ function User() {
 	}
 
 	return (
-		<div className="p-4 rounded-2xl absolute mt-10   bg-gray-600 flex items-center gap-5">
+		<div className="p-3 rounded-2xl absolute  top-14 right-14 z-[9999] bg-gray-600 flex items-center gap-5">
 			<img
 				src={user?.image}
 				alt={user?.name}
-				className="h-12 w-12 rounded-full"
+				className="h-12 w-12 rounded-full object-cover"
 			/>
 			<span className="font-semibold text-white">{user?.name}</span>
 			<Button onClick={handleClick}>log out</Button>

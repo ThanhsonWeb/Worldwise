@@ -7,7 +7,7 @@ function AuthProvider({ children }) {
 	const FAKE_USER = {
 		email: "AnhSondz@gmail.com",
 		password: "123456",
-		name: "SonJony",
+		name: "Son Jony",
 		image: avatar,
 	};
 
@@ -17,9 +17,10 @@ function AuthProvider({ children }) {
 	console.log(isAuthenticated);
 
 	function login(email, password) {
-		if (email === FAKE_USER.email && password === FAKE_USER.password)
+		if (email === FAKE_USER.email && password === FAKE_USER.password) {
 			setIsAuthenticated(true);
-		setUser(FAKE_USER);
+			setUser(FAKE_USER);
+		}
 	}
 
 	function logout() {
